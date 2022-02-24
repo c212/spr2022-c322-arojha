@@ -1,0 +1,23 @@
+lets begin :)
+
+you may use nano. I use vi. 
+to quit vi editor press <escape> then ":wq" <enter>
+
+I will use my port number . you need to use different ones
+java -jar target/demo-0.0.1-SNAPSHOT.jar --server.port=42356
+
+
+
+command to note: scp step03/* step04/ 
+notice every project is in a different folder
+
+please understand we will use beans in future. no coding assignment here
+please make sure everything is alrgiht before you use mvn package.
+
+For step08 and step08a you will need to add the following lines of 
+code into your pom.xml. follow along.
+<dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+    <version>2.3.0</version>
+</dependency>
