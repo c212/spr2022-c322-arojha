@@ -1,0 +1,24 @@
+This is regarding Lab 3 question 3.25 and 3.27. In question 3.27 we are asked to prove that 
+(tail - head - count) % elements.length == 0 remains invariant in add and remove methods of 
+circular queue. We discuss this in lab. If we reuse the code available in 3.25 to prove this 
+equation, we find the assertion throws errors. This is due to a bug in the solution provided 
+by Horstmann (golden gate book). Thanks to Suraj Marakas (C322 Spring 2022) for pointing out 
+the the assertion issue with 3.27 and 3.25. 
+
+The error:
+
+In the add methods count gets updated much later than it should be. The part of code that is 
+responsible to increase queue size, relies on an accurate description of the count. In the given 
+solution, count gets updated after it has been asserted that elements.length==count. This makes a 
+bad case at boundary condition when length=2 and count=2. In this case tail gets set to 0 which 
+erases the first element in queue. 
+
+Solution:
+
+To solve this you can simply update count variable before checking the elements.length==count condition. 
+
+Some workarounds I noticed were updating tail as (tail++). This would not be right as message queue gets 
+extended only when count is at the brim. Simply updating tail with tail ++ would make it a linked list type 
+implementation. Please reach out to us if you need further clarification in this problem. 
+
+Arpan 
